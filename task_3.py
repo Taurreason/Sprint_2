@@ -1,7 +1,7 @@
 class PointsForPlace:
 
     @staticmethod
-    def get_points_for_place(place: int):
+    def get_points_for_place(place: int) -> int:
         points = 0  # объявляем локально, так как переменная пересчитывается заново
         if place > 100:
             return print('Баллы начисляются только первым 100 участникам')
@@ -26,7 +26,7 @@ class PointsForMeters:
 
 class TotalPoints(PointsForPlace, PointsForMeters):
 
-    def get_total_points(self, meters, place):
+    def get_total_points(self, meters: int, place: int) -> float:
         total = self.get_points_for_place(place) + self.get_points_for_meters(meters)
         return total
 
